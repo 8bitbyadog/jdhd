@@ -6,6 +6,7 @@
   import TimeTracker from './components/TimeTracker.svelte';
   import CreativeTools from './components/CreativeTools.svelte';
   import JRPGHeader from './components/JRPGHeader.svelte';
+  import CalendarTracker from './components/CalendarTracker.svelte';
   import { initializeStorage, exportData, importData as importDataFunc } from './lib/storage.js';
 
   let activeTab = 'tasks';
@@ -71,6 +72,11 @@
       Time
     </button>
     <button 
+      class={activeTab === 'calendar' ? 'active' : ''} 
+      on:click={() => setActiveTab('calendar')}>
+      Calendar
+    </button>
+    <button 
       class={activeTab === 'creative' ? 'active' : ''} 
       on:click={() => setActiveTab('creative')}>
       Creative
@@ -87,6 +93,8 @@
       <TaskManager />
     {:else if activeTab === 'time'}
       <TimeTracker />
+    {:else if activeTab === 'calendar'}
+      <CalendarTracker />
     {:else if activeTab === 'creative'}
       <CreativeTools />
     {:else if activeTab === 'settings'}

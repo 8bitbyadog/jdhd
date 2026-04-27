@@ -2,7 +2,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear"
+    "start": "sirv public --no-clear --host localhost --port 3000"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^28.0.3",
